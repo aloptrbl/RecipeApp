@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+    <category>
+        <idCategory>1</idCategory>
+        <strCategory>Beef</strCategory>
+        <strCategoryThumb>https://www.themealdb.com/images/category/beef.png</strCategoryThumb>
+        <strCategoryDescription>Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating beef since prehistoric times.[1] Beef is a source of high-quality protein and essential nutrients.[2]</strCategoryDescription>
+    </category>
+    <category>
+        <idCategory>2</idCategory>
+        <strCategory>Chicken</strCategory>
+        <strCategoryThumb>https://www.themealdb.com/images/category/chicken.png</strCategoryThumb>
+        <strCategoryDescription>Chicken is a type of domesticated fowl, a subspecies of the red junglefowl. It is one of the most common and widespread domestic animals, with a total population of more than 19 billion as of 2011.[1] Humans commonly keep chickens as a source of food (consuming both their meat and eggs) and, more rarely, as pets.</strCategoryDescription>
+    </category>
+</categories>
