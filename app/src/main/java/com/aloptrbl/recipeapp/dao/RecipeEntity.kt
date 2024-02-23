@@ -1,10 +1,10 @@
-package com.aloptrbl.recipeapp.models
+package com.aloptrbl.recipeapp.dao
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Recipe(
+data class RecipeEntity(
     @PrimaryKey val id: Int,
     val typeId: Int, // Use the ID of the RecipeType
     val name: String,

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="categoryName"
+            type="String"
+            />
+    </data>
+
+    <TextView
+        android:id="@+id/categoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="12dp"
+        android:textSize="22sp"
+        android:fontFamily="monospace"
+        android:textFontWeight="900"
+        android:textColor="@color/white"
+        android:text="@{categoryName}"
+        />
+</layout>

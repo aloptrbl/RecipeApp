@@ -3,6 +3,7 @@ package com.aloptrbl.recipeapp.di
 import android.app.Application
 import android.content.Context
 import androidx.room.Room
+import com.aloptrbl.recipeapp.apis.RecipeAPI
 import com.aloptrbl.recipeapp.dao.RecipeDao
 import com.aloptrbl.recipeapp.db.AppDatabase
 import dagger.Module
@@ -22,38 +23,23 @@ object AppModule {
     @Provides
     @Singleton
     fun provideRetrofit(): Retrofit {
-        val interceptor = Interceptor { chain ->
-            val original = chain.request()
-            val originalHttpUrl = original.url()
-
-            val url = originalHttpUrl.newBuilder()
-/*                .addQueryParameter("hash", BuildConfig.MARVEL_HASH)
-                .addQueryParameter("apikey", BuildConfig.MARVEL_PUBLIC_KEY)*/
-                .build()
-
-            val requestBuilder = original.newBuilder()
-                .url(url)
-
-            val request = requestBuilder.build()
-            chain.proceed(request)
-        }
-
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(interceptor)
-            .build()
-
         return Retrofit.Builder()
-            .baseUrl("https://gateway.marvel.com/v1/public/")
+            .baseUrl("https://www.themealdb.com/api/json/v1/1/")
             .addConverterFactory(GsonConverterFactory.create())
-            .client(okHttpClient)
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideRecipeAPI(retrofit: Retrofit): RecipeAPI {
+        return retrofit.create(RecipeAPI::class.java)
+    }
+
 
     @Provides
     fun provideRecipeDao(database: AppDatabase): RecipeDao {
         return database.recipeDao()
     }
-
 
     @Provides
     @Singleton
@@ -69,6 +55,4 @@ object AppModule {
     fun provideApplication(@ApplicationContext context: Context): Application {
         return context as Application
     }
-
-
 }
