@@ -28,7 +28,7 @@
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/list_item_result"
+        tools:listitem="@layout/item_recipe_list"
         />
 
 </layout>
